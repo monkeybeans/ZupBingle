@@ -1,0 +1,89 @@
+.register {
+  position: relative;
+  z-index: $z-index-login;
+
+  &__shadow {
+    position: absolute;
+    background: rgba(0, 0, 0, .8);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+
+  &__content {
+    background: $success-color;
+    width: 90%;
+    height: 37rem;
+    top: 40%;
+    margin: auto;
+    transform: translateY(-40%);
+    position: relative;
+    border-radius: 29% 25% 40% 44%;
+
+    form {
+      position: relative;
+      top: 35%;
+      transform: translateY(-50%);
+      padding: 0 10%;
+      font-size: 1.5rem;
+
+      .register-message {
+        width: 85%;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+        text-align: center;
+
+        span {
+          display: inline-block;
+        }
+      }
+
+      label {
+        font-size: inherit;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: .8rem 0;
+      }
+
+      input[type=text] {
+        font-size: inherit;
+        width: 85%;
+        margin: 1rem auto;
+        border: 0;
+        padding: 1rem;
+        text-align: center;
+        display: block;
+      }
+
+      input[type=submit] {
+        font-size: inherit;
+        margin: 0 auto;
+        width: 85%;
+        border: 0;
+        display: block;
+        padding: .8rem  1rem;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}
+
+
+.already-registered {
+  display: none !important;
+}
+
+.leave-game {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  button {
+    padding: .5rem;
+    font-size: .5rem;
+    background: rgba(220, 220, 220, 0.5) none repeat scroll 0% 0%;
+    box-shadow: 0px 0px 6px grey;
+    border-radius: 2%;
+  }
+}

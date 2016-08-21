@@ -1,0 +1,70 @@
+@mixin rainbow-background {
+  //background: linear-gradient(to right, $rnd-clr-1, $rnd-clr-2, $rnd-clr-3, $rnd-clr-4, $rnd-clr-5, $rnd-clr-6);
+  background: $clr-brightest;
+  border: .3rem solid $clr-default;
+};
+
+@mixin fancy-header-text {
+  color: $clr-default;
+  font-size: 1.5rem;
+  //text-shadow: $clr-darkest -0 -3px 20px;
+  //text-shadow: $clr-darkest -0 -2px 00px;
+}
+.catching-header {
+  text-align: center;
+
+  h2 {
+    @include rainbow-background;
+    transform-origin: 50% 100%;
+    @include fancy-header-text;
+    margin: 0;
+    padding: 1rem 2rem 0.5rem 2rem;
+    text-align: center;
+  }
+}
+
+.statistics-for-the-crowd {
+  padding: 0rem 0rem;
+  text-align: center;
+  font-size: 1.2rem;
+  background: $clr-darkened;
+
+  h2 {
+    @include rainbow-background;
+    @include fancy-header-text;
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  .current-player {
+    text-align: center;
+    font-size: inherit;
+    padding: 1rem 3rem;
+    font-weight: 700;
+  }
+
+  .pole-position {
+    font-size: inherit;
+    color: $clr-darkest;
+    border: 0;
+    margin: 0;
+    padding: 1rem 0rem;
+    text-align: center;
+    white-space: pre-line;
+    background: linear-gradient(to right, #DAA520, #fff);
+  }
+
+  .buzzing-crowd {
+    font-size: inherit;
+    padding: 2rem 0;
+    background: $clr-darkened;
+    opacity: .8;
+
+  }
+}
+
+
+.shout-box {
+  font-size: 1.2rem;
+  background-color: rgba(253, 168, 0, .2);
+}

@@ -1,0 +1,40 @@
+{
+  "name": "zup-bingle",
+  "version": "1.0.0",
+  "description": "a zup zup bingle bingo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo 'no tests :(' && exit 1",
+    "start:dev": "OPENSHIFT_NODEJS_PORT=3000 nodemon --use-strict server.js",
+    "start": "node --use-strict server.js",
+    "build:client": "webpack",
+    "style:watch": "npm run style -- --watch",
+    "style": "node-sass ./client/style --output ./public/css/",
+    "style:prefix": "postcss --use autoprefixer public/css/bingle.css -d ./public/css/",
+    "build:style": "npm run style && npm run style:prefix",
+    "build": "npm run build:style && npm run build:client"
+  },
+  "keywords": [
+    "bingle"
+  ],
+  "author": "me the bingler",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.2",
+    "express": "^4.13.4",
+    "handlebars": "^4.0.5",
+    "socket.io": "^1.4.6",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "postcss-cli": "^2.5.2",
+    "webpack": "^1.13.1"
+  }
+}

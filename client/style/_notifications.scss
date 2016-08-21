@@ -1,0 +1,58 @@
+@mixin static-bubble-layout {
+  position: absolute;
+  z-index: $z-index-notifier;
+  background: darken($clr-brightest, 5%);
+  color: darken($clr-default, 10%);
+  width: 80vw;
+  font-size: 2.5rem;
+  padding: 2rem;
+  border-radius: 5%;
+  //box-shadow: 0rem 0rem 5rem $clr-darkest, 0rem 0rem 20rem $clr-default;
+  box-shadow: 0rem 0rem 4rem $clr-brightest, 0rem 0rem 7rem $rnd-clr-4;
+}
+
+@keyframes bubble {
+  from {
+    @include static-bubble-layout;
+    top: 0;
+    left: 100%;
+    transform: translateX(-50%) scale(0,0);
+  }
+  10% {
+    @include static-bubble-layout;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%) scale(3,3);
+  }
+  30% {
+    @include static-bubble-layout;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%) scale(1,1);
+  }
+  90% {
+    @include static-bubble-layout;
+    top: 55vh;
+    left: 50%;
+    transform: translateX(-50%) scale(1,1);
+  }
+  to {
+    @include static-bubble-layout;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1,1);
+  }
+}
+
+
+.bingo-notifier {
+  animation: bubble 3s 1;
+  animation-timing-function: ease-out;
+  text-align: center;
+  font-size: 1rem;
+
+  span {
+    font-size: inherit;
+    opacity: .8;
+  }
+}

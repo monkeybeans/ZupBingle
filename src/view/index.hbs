@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="/css/bingle.css">
+</head>
+<body>
+  <div id="register" class="register already-registered">
+    <div class="register__shadow">
+      <div class="register__content">
+        <form type="POST">
+          <label for="register-name">What name does best describe your inner person?</label>
+          <input id="register-name" type="text" name="username" value=""/>
+          <div class="register-message">
+            <span id="register-message"></span>
+          </div>
+          <input id="register-submit" type="submit" value="Let me join the crowd!!!"/>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="leave-game">
+    <button id="leave-game">Leave game...</button>
+  </div>
+  <div class="statistics-for-the-crowd">
+    <h2>The crowd</h2>
+    <div id="current-player" class="current-player"></div>
+    <div id="pole-position" class="pole-position"></div>
+    <div id="buzzing-crowd" class="buzzing-crowd"></div>
+  </div>
+  <div id="shout-box" class="shout-box">
+  </div>
+
+  <div class="catching-header">
+    <h2>Buzz buzz...buzz words</h2>
+  </div>
+  <div style="display:none;">
+    <h2>The field of buzzlings</h2>
+  </div>
+  <div id="bingo-field" class="bingo-field">
+    {{#each field.rows as |row|}}
+      <div class="bingo-row">
+        {{#each row as |tile|}}
+        <span
+          class="bingo-tile {{#if tile.selected}}bingo-tile--selected{{/if}}"
+          data-coordinates="{{@index}}-{{@../index}}">
+          <span class="bingo-tile__content">
+            {{tile.name}}
+          </span>
+        </span>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="tail"></div>
+
+
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script type="text/javascript" src="/js/zup-bingle.bundle.js"></script>
+</body>
+</html>

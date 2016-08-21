@@ -1,0 +1,15 @@
+html {
+  box-sizing: border-box;
+  font-size: $root-font-size;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: $root-font-size;
+  font-family: $font;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
